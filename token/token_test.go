@@ -18,9 +18,30 @@ func TestLookupIdent(t *testing.T) {
         {"true", TRUE},
         {"false", FALSE},
         {"null", NULL},
-        {"foobar", IDENT},   // non-keyword identifier
-        {"x", IDENT},        // non-keyword identifier
-        {"myVar", IDENT},    // non-keyword identifier
+        {"break", BREAK},
+        {"case", CASE},
+        {"chan", CHAN},
+        {"const", CONST},
+        {"default", DEFAULT},
+        {"defer", DEFER},
+        {"fallthrough", FALLTHROUGH},
+        {"go", GO},
+        {"goto", GOTO},
+        {"interface", INTERFACE},
+        {"map", MAP},
+        {"package", PACKAGE},
+        {"range", RANGE},
+        {"select", SELECT},
+        {"struct", STRUCT},
+        {"switch", SWITCH},
+        {"type", TYPE},
+        {"continue", CONTINUE},
+        {"for", FOR},
+        {"import", IMPORT},
+        {"var", VAR},
+        {"foobar", IDENT},   // Not a keyword, to return IDENT
+        {"x", IDENT},        // Not a keyword, to return IDENT
+        {"myVar", IDENT},    // Not a keyword, to return IDENT
     }
 
     for _, tt := range tests {
@@ -47,6 +68,27 @@ func TestTokenCreation(t *testing.T) {
         {FLOAT, "123.456"},
         {STRING, "hello"},
         {BOOL, "true"},
+        {BREAK, "break"},
+        {CASE, "case"},
+        {CHAN, "chan"},
+        {CONST, "const"},
+        {DEFAULT, "default"},
+        {DEFER, "defer"},
+        {FALLTHROUGH, "fallthrough"},
+        {GO, "go"},
+        {GOTO, "goto"},
+        {INTERFACE, "interface"},
+        {MAP, "map"},
+        {PACKAGE, "package"},
+        {RANGE, "range"},
+        {SELECT, "select"},
+        {STRUCT, "struct"},
+        {SWITCH, "switch"},
+        {TYPE, "type"},
+        {CONTINUE, "continue"},
+        {FOR, "for"},
+        {IMPORT, "import"},
+        {VAR, "var"},
     }
 
     for _, tt := range tests {
