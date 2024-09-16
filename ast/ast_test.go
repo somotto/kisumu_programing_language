@@ -4,25 +4,14 @@ import (
 	"kisumu/token"
 	"testing"
 )
-
+//tests the functionality of the expression statements
 func TestExpressionStatement_statementNode(t *testing.T) {
-	type fields struct {
-		Token      token.Token
-		Expression Expression
-	}
-	tests := []struct {
-		name   string
-		fields fields
-	}{
-		// TODO: Add test cases.
-	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			es := &ExpressionStatement{
-				Token:      tt.fields.Token,
-				Expression: tt.fields.Expression,
-			}
-			es.statementNode()
-		})
-	}
+	exprToken := token.Token{Type: token.IDENT, Literal: "foobar"}
+    stmt := &ExpressionStatement{
+        Token: exprToken,
+    }
+
+    if stmt.TokenLiteral() != "foobar" {
+        t.Errorf("stmt.TokenLiteral() wrong. expected=%q, got=%q", "foobar", stmt.TokenLiteral())
+    }
 }
