@@ -7,24 +7,24 @@ type Node interface {
     TokenLiteral() string
 }
 
-// Statement represents a statement in the language.
+// represents a statement in the language.
 type Statement interface {
     Node
     statementNode()
 }
 
-// Expression represents an expression in the language.
+// represents an expression in the language.
 type Expression interface {
     Node
     expressionNode()
 }
 
-// Program is the root node of the entire program, containing all statements.
+// the root node of the entire program, containing all statements.
 type Program struct {
     Statements []Statement
 }
 
-// TokenLiteral returns the literal value of the token for debugging.
+// to return the literal value of the token for debugging.
 func (p *Program) TokenLiteral() string {
     if len(p.Statements) > 0 {
         return p.Statements[0].TokenLiteral()
@@ -32,7 +32,7 @@ func (p *Program) TokenLiteral() string {
     return ""
 }
 
-// LetStatement represents a variable declaration.
+// represents a variable declaration.
 type LetStatement struct {
     Token token.Token // the token.LET token
     Name  *Identifier // variable name
@@ -42,7 +42,7 @@ type LetStatement struct {
 func (ls *LetStatement) statementNode()       {}
 func (ls *LetStatement) TokenLiteral() string { return ls.Token.Literal }
 
-// Identifier represents a variable or function name.
+// represents a variable or function name.
 type Identifier struct {
     Token token.Token // the token.IDENT token
     Value string      // the name of the identifier
@@ -51,7 +51,7 @@ type Identifier struct {
 func (i *Identifier) expressionNode()      {}
 func (i *Identifier) TokenLiteral() string { return i.Token.Literal }
 
-// ReturnStatement represents a return statement.
+// for return statements
 type ReturnStatement struct {
     Token       token.Token // the 'return' token
     ReturnValue Expression   // the returned expression
@@ -60,10 +60,10 @@ type ReturnStatement struct {
 func (rs *ReturnStatement) statementNode()       {}
 func (rs *ReturnStatement) TokenLiteral() string { return rs.Token.Literal }
 
-// ExpressionStatement represents a statement containing an expression.
+// for statements containing expressions
 type ExpressionStatement struct {
-    Token      token.Token // the first token of the expression
-    Expression Expression  // the expression itself
+    Token      token.Token // first token of the expression
+    Expression Expression  // expression itself
 }
 
 func (es *ExpressionStatement) statementNode()       {}
