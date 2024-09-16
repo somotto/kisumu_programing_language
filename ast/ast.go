@@ -2,7 +2,7 @@ package ast
 
 import "kisumu/token"
 
-// Node represents the base interface for all AST nodes.
+//for the base interface for all AST nodes.
 type Node interface {
     TokenLiteral() string
 }
