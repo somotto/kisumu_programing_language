@@ -17,12 +17,12 @@ const (
 	STRING = "STRING"
 	BOOL   = "BOOL"
 
-	ASSIGN   = "="
-	PLUS     = "+"
-	MINUS    = "-"
-	BANG     = "!"
-	ASTERISK = "*"
-	SLASH    = "/"
+	ASSIGN   = "ASSIGN"
+	PLUS     = "PLUS"
+	MINUS    = "MINUS"
+	BANG     = "BANG"
+	ASTERISK = "MUL"
+	SLASH    = "DIV"
 
 	LT = "<"
 	GT = ">"
