@@ -6,7 +6,7 @@
 
 # Language Used - Monkey 
 
-" Without an interpreter or a compiler, a programming language is nothing but an idea."
+"Without an interpreter or a compiler, a programming language is nothing but an idea"
 
 ## Features of monkey language 
 
@@ -105,3 +105,18 @@ The presence of token fields allows our parser to operate like an iterator. The 
 ![alt text](<Screenshot from 2024-09-23 22-01-47.png>)
 
 Not only but also because of this feature we can understand what kind of statements are we reading and parse in the best way possible.
+
+## Usage 
+To use this interpreted kisumu programming language, clone the repository 
+
+```bash 
+cd kisumu_kisumu_programming_language 
+
+go run kisumu/main.go 
+```
+You can input a statement or an expression on the prompt and it will have interpreted.
+
+## Contributors 
+* [somotto](https://github.com/somotto)      
+* [a-j-sheilla](https://github.com/a-j-sheilla) 
+* [Hilary505](https://github.com/Hilary505)
